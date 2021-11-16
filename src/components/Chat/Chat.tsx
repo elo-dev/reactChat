@@ -42,7 +42,7 @@ export const Chat = () => {
       <h1 className={style.chat__title}>Chat</h1>
       <div className={style.chat}>
         <div className={style.chat__boxWrapper}>
-          {messages?.map((message, index) => (
+          {messages?.map((message, index: number) => (
             <Row key={index} className={style.row}>
               <Col span={24}>
                 <div className={style.chat__person}>
@@ -59,6 +59,14 @@ export const Chat = () => {
                 >
                   {message.text}
                 </p>
+                <span className={style.chat__time}>
+                  {new Date(
+                    message?.createdAt?.seconds * 1000
+                  ).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </span>
               </Col>
             </Row>
           ))}

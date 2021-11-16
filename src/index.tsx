@@ -6,6 +6,7 @@ import './index.css'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
+import ThemeProvider from './context/ThemeProvider'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCTdUK8ry-fIV0XP88xSy_JUUpHD-dQqt4',
@@ -24,11 +25,13 @@ export const Context = createContext<any>(null)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context.Provider value={{ firebase, auth, firestore }}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Context.Provider>
+    <ThemeProvider>
+      <Context.Provider value={{ firebase, auth, firestore }}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Context.Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

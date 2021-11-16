@@ -11,9 +11,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--theme-default-background) !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --theme-light-header: rgba(26, 102, 223, 0.9);
+  --theme-dark-header: #c6d4dd;
+  --theme-default-header: var(--theme-light-header);
+
+  --theme-light-background: white;
+  --theme-dark-background: rgba(0, 0, 0, 0.95);
+  --theme-default-background: var(--theme-light-background);
+
+  --theme-light-chat__text:rgba(47, 47, 47, 0.95);
+  --theme-dark-chat__text: #f2f2f2;
+  --theme-default-chat__text: var(--theme-light-chat__text);
 }
