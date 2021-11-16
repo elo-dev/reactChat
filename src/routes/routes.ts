@@ -1,4 +1,4 @@
-import { Chat } from '../components/Chat'
+import { Chat } from '../components/Chat/Chat'
 import { Login } from '../components/Login/Login'
 import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/constants/constants'
 import { RouteProps } from 'react-router'
